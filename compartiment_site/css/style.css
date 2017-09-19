@@ -1,0 +1,1088 @@
+*{
+	box-sizing: border-box;  /*ça bloque l'élement, le recentre et ça fait une marge*/
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+h1{
+    font-size: 70px;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+	font-family: 'Amatic SC', cursive;
+	font-weight: 400;
+}
+h2{
+    font-size: 50px;
+    color: CRIMSON;
+    padding: 20px;
+    font-weight: bold;
+	font-family: 'Amatic SC', cursive;
+
+}
+h3{
+    font-size: 22px;
+    color: #2c3e50;
+    padding: 15px;
+}
+h4{
+	text-align: center;
+	margin-top: 30px;
+	color: #2c3e50;
+	font-size: 20px;
+}
+blockquote{
+    font-style: italic;
+    font-size: 120%;
+}
+strong{
+    font-weight: bold;
+}
+main{
+    background:GAINSBORO;
+	margin: 0 auto;
+	width: 1000px;
+}
+aside{
+    height: 250px;
+
+}
+section{
+    margin-top: 50px;
+    /*background: THISTLE;*/
+    padding: 20px;
+}
+footer{
+    background:MISTYROSE;
+    height: 30px;
+}
+/*********************************  DEBUT HEADER  ***********************************/
+header{
+    background-color:SLATEGRAY;
+}
+#logo{
+	width: 25%;
+	float: left;
+	text-align: center;
+	padding: 15px;
+}
+#slogan{
+	width: 50%;
+	float: left;
+}
+#rs{
+	width: 25%;
+	float: left;
+	padding: 20px;
+}
+#rs a{
+	font-size: 30px;
+	color: white;
+	display: block; /*change leur type inline en block pour les mettre les uns en dessous des autres*/
+	text-align: right;
+	padding: 15px 30px 0 0;
+	text-decoration: none;
+}
+#rs a:hover{
+	font-size: 60px;
+	transition: 1s;
+}
+
+/*********************************  FIN HEADER  ***********************************/
+
+/*********************************  DEBUT NAV  ***********************************/
+nav{
+    background-color: MISTYROSE;
+    border-bottom: 4px solid slategray;
+	text-align: center;
+	padding: 17px;
+}
+nav a{
+	font-family: 'Amatic SC', cursive;
+	font-size: 25px;
+	text-decoration: none;
+	color: Black;
+	font-weight: 500;
+	border: 1px solid pink;
+	padding: 6px 9px;
+	border-radius: 7px;
+	margin: 0px 8px;
+}
+nav a:hover{
+	background: pink;
+	transition: 1s;
+}
+.activ{
+	background: pink;
+}
+
+/*********************************  FIN NAV ***********************************/
+
+/*********************************  DEBUT PAGE TEXTE  ***********************************/
+.roboto p{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+/*********************************  FIN PAGE TEXTE  **************************************/
+
+
+/*********************************  DEBUT PAGE SELECTEUR  ***********************************/
+.select p{
+    color: red;
+}
+.select p:first-of-type{
+    color: purple;
+}
+.select p:last-of-type{
+    color: purple;
+}
+.select p:nth-of-type(5),.select p:nth-of-type(6){
+    color:black;
+}
+.select div:not(.zoneB){
+    font-weight: bold;   /*toutes les div du parent .select seront en gras not(.zoneB) sauf la classe zoneB*/
+}
+.select .zoneA{
+	color: #f56;
+}
+.select .zoneB{
+	color: #963;
+}
+.select .zoneB .couleurBleu{
+	color: blue;
+}
+.select #zoneC{
+	color: #98f32f;
+}
+.select #zoneD span{   /*le span prendra en compte aussi .couleurBleu sauf pour la couleur car on l'aura déjà définie*/
+	color: #32ff32;
+
+}
+
+/*********************************  FIN PAGE SLECTEUR  ***********************************/
+
+
+/*********************************  DEBUT PAGE IMAGES  ***********************************/
+.imageFond{
+	background: #000 url(../img/fond.jpg) no-repeat;
+	background-size: cover;
+}
+.imageFond p{
+	width: 75%;
+	margin: 100px auto 200px auto ; /*auto permet de centrer*/
+	background: rgba(255, 255, 255, 0.6);
+	padding: 20px;
+	font-size: 120%;
+	border-radius: 10px;
+	}
+img[src="img/toureiffel.jpg"]{
+	margin: auto;
+	width: 250px;
+	display: block;
+	border: 5px solid;
+	box-shadow:5px 5px 15px rgba(0,0,0,0.5);
+	}
+.rotationImg{   /*image de type inline-block, elle comporte des marges par défaut*/ /*pour supprimer cette marge, ouvrir com après première photo et le fermer avant deuxième photo ou enlever les espaces dans le HTML*/
+	text-align: center;
+}
+.image{
+	margin: 20px;
+	border: 5px solid #eee;
+	box-shadow:4px 4px 4px rgba(0,0,0,0.5);
+	transition: 1s;
+
+}
+.image:hover{
+	transform: rotate(-7deg);
+}
+.rotation360:hover{
+	transform: rotate(-360deg);
+}
+
+/*********************************  FIN PAGE IMAGES  ***********************************/
+
+
+/*********************************  DEBUT PAGE POSITION  ***********************************/
+.centre{
+	margin: 0 auto;   /*permet de centrer mon élément*/ /*0 correspond en haut et en bas et AUTO droite et gauche*/
+	width: 500px; /*pour le centrer lui donner une taille comme il est block il prends toute la largeur*/
+	height: 200px;
+	background: #3cc;
+	color: white;
+	text-align: center;
+	line-height: 180px;
+	font-size: 50px;
+	font-style: italic
+}
+.absolute{ /*element positionné par rapport au body et se positionne par dessus les autres éléments*/
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	background: #FF6600;
+	width: 100px;
+	height: 100px;
+	color: white;
+	font-size: 25px;
+	text-align: center;
+	line-height: 150px;
+}
+.relative{
+	background: red;
+	width: 500px;
+	height: 500px;
+	position: relative;
+	bottom: 50px;
+	margin: 0 auto;
+}
+.relative div{
+	position: absolute;
+	bottom: 10px;
+	width: 50px;
+	height: 50px;
+	background: blue;
+}
+button{
+	position: fixed;
+	bottom: 40px;
+	right: 20px;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	font-size: 350%;
+	color: slategray;
+
+}
+button:hover{
+	color: pink;
+	transition: 1s;
+}
+.trente{
+	width: 30%;
+	padding: 20px;
+	font-size: 22px;
+	background: #f1684e;
+	color: #efe94b;
+	font-weight: bold;
+}
+.cinquante{
+	width: 50%;
+	padding: 20px;
+	font-size: 22px;
+	background: #383746;
+	color: #efe94b;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.cent{
+	width: 100%;
+	padding: 20px;
+	font-size: 22px;
+	background: #3cc;
+	color: #efe94b;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.carre{
+	width: 170px;
+	height: 170px;
+	background: ROSYBROWN;
+	border: 3px solid #3cc;
+	margin: 10px;
+	float: left;
+	text-align: center;
+	font-size: 25px;
+	color: white;
+	line-height: 150px;
+	box-shadow:4px 4px 4px rgba(0,0,0,0.5);
+}
+.carre:hover{
+	background: #DC143C;
+	border: 15px solid LIGHTSEAGREEN;
+	transition: 1s;
+	transform: rotate(45deg);
+	border-radius: 85px;
+}
+.float2{
+	margin: 0 auto;
+	width: 100%;
+}
+.rect{
+	height: 40px;
+	background: DARKSEAGREEN;
+}
+.c1, .c2, .c3, .c4{
+	width: 25%;
+	height: 250px;
+	float: left;
+}
+.c1{
+	background: LIGHTPINK;
+}
+.c2{
+	background: LIGHTSALMON;
+}
+.c3{
+	background: TURQUOISE;
+}
+.c4{
+	background: ROSYBROWN;
+}
+
+.clear{
+	clear: both;
+}
+/*Le flex: méthodes et techniques qui permettent de placer des elements
+Les parents ont leur met un display: flex et placent tes enfants*/
+.flex{
+	display: flex;
+	/*justify-content: space-around; /*Les éléments s'affichent avec un espace égal autour de meme*/
+	justify-content: space-around; /*les éléments s'affichent avec un espace entre eux*/
+	/*flex-direction: row-reverse;*/ /*Les élements s'inversent sur la rangée*/
+	flex-direction: row;
+
+}
+.flex div{
+	width: 150px;
+	height: 150px;
+	background: INDIANRED;
+	border: 3px solid;
+	text-align: center;
+	font-size: 50px;
+	color: white;
+
+}
+/*********************************  FIN PAGE POSITION  ***********************************/
+
+
+/*********************************  DEBUT PAGE ZONING  ***********************************/
+#zoning1{
+	margin: 0 auto;
+	width: 800px;
+	border: 2px solid black;
+}
+#zoning1 header{
+	height: 80px;
+	background: DARKSEAGREEN;
+
+}
+#zoning1 aside{
+	width: 30%;
+	height: 500px;
+	background: LIGHTSALMON;
+	float: left;
+}
+#zoning1 section{
+	width: 70%;
+	height: 500px;
+	background: ROSYBROWN;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+#zoning2{
+	margin: 0 auto;
+	width: 800px;
+	background: black;
+	border: 2px solid black;
+}
+#zoning2 header{
+	height: 80px;
+	background: DARKSEAGREEN;
+}
+#zoning2 section{
+	width: 60%;
+	height: 500px;
+	background: ROSYBROWN;
+	float: left;
+	margin: 0;
+	padding: 0;
+
+}
+#zoning2 aside{
+	width: 20%;
+	height: 500px;
+	background: LIGHTSALMON;
+	float: left;
+}
+
+#zoning3{
+	margin: 0 auto;
+	width: 800px;
+	background: black;
+	border: 2px solid black;
+}
+#zoning3 div{
+	width: 50%;
+	height: 500px;
+}
+.divgauche{
+	background: ROSYBROWN;
+	float: left;
+}
+.divdroite{
+	background: LIGHTSALMON;
+	float: left;
+}
+#zoning3 footer{
+	height: 80px;
+	background: DARKSEAGREEN;
+
+	width: 100%;
+}
+#zoning4{
+	margin: 0 auto;
+	width: 800px;
+	border: 2px solid black;
+	background: white;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+}
+#zoning4 header{
+	height: 80px;
+	background:  DARKSEAGREEN;
+}
+#zoning4 nav{
+	height: 50px;
+	background: PALEGREEN;
+	border-bottom: solid 5px LIGHTSALMON;
+}
+#zoning4 section{
+	margin: 20px;
+	padding: 0;
+	background: LIGHTSALMON;
+	height: 500px;
+}
+#zoning4 footer{
+	background: rosybrown;
+	height: 60px;
+}
+#zoning5{
+	margin: 0 auto;
+	width: 800px;
+	border: 2px solid black;
+	background: white;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+
+}
+#zoning5 header{
+	height: 80px;
+	background: LIGHTSEAGREEN;
+}
+#zoning5 nav{
+	height: 50px;
+	background: PALEGREEN;
+	border: none;
+}
+#zoning5 section{
+	margin: 20px;
+	padding: 0;
+	background: url(../img/fond.jpg);
+}
+#zoning5 footer{
+	background: rosybrown;
+	height: 60px;
+}
+
+.divA, .divB, .divC, .divD{
+	float: left;
+	height: 250px;
+	width: 50%;
+}
+.divA{
+	background: url(../img/fond.jpg);
+	float: left;
+
+}
+.divB{
+	background: YELLOWGREEN;
+	float: left;
+
+}
+.divC{
+	background: STEELBLUE;
+	float: left;
+
+}
+.divD{
+	background: TOMATO;
+	float: left;
+
+}
+.divA:hover, .divB:hover, .divC:hover, .divD:hover{
+	transform: rotate(360deg);
+	border-radius: 300px;
+	transition: 3s;
+	background: transparent;
+}
+
+#zoning6{
+	margin: 0 auto;
+	width: 800px;
+	border: 2px solid black;
+	text-align: center;
+	font-weight: bold;
+	line-height: 25px;
+
+}
+#zoning6 header div{
+	height: 175px;
+	float: left;
+}
+#zoning6 header .h1, .h3{
+	width: 25%;
+	background: pink;
+}
+#zoning6 header .h2{
+	width: 50%;
+	background: PEACHPUFF;
+}
+#zoning6 nav{
+	height: 50px;
+	background: DARKKHAKI;
+	border:none;
+}
+#zoning6 aside{
+	width: 20%;
+	height: 600px;
+	background: CORAL;
+	float: left;
+}
+#zoning6 section{
+	margin: 0;
+	padding: 0;
+	width:80%;
+	float: left;
+
+}
+#zoning6 .dA, .dB{
+	float: left;
+	width: 50%;
+	height: 230px;
+}
+#zoning6 .dA{
+	background: LIGHTGREEN;
+
+}
+#zoning6 .dB{
+	background: MEDIUMORCHID;
+}
+#zoning6 .slide{
+	height: 230px;
+	background: LIGHTSEAGREEN;
+	width: 80%;
+	float: left;
+}
+#zoning6 .dC, .dD{
+	height: 140px;
+	width: 25%;
+	float: left;
+}
+#zoning6 .dC{
+	background: pink;
+}
+#zoning6 .dD{
+	background: rosybrown;
+}
+#zoning6 footer{
+	height: 60px;
+	background: DARKSLATEBLUE;
+
+}
+/*********************************  FIN PAGE ZONING  ***********************************/
+
+/*********************************  DEBUT PAGE TABLEAU  ***********************************/
+.tableau{
+	margin: 0 auto;
+	width: 80%;
+	border: 3px solid #2980b9;
+	border-collapse: collapse;
+}
+.tableau thead, .tableau tfoot{
+	background: #d0e3fa;
+}
+th{
+	border: 1px solid #2980b9;
+	width: 25%;
+	padding: 4px;
+}
+td{
+	border: 1px solid #6495ed;
+	font-size: 100%;
+	padding: 5px;
+	text-align: center;
+
+}
+#sec{
+	padding-bottom: 20px;
+}
+/*********************************  FIN PAGE TABLEAU  ***********************************/
+
+/*********************************  DEBUT PAGE LISTE  ***********************************/
+
+ul.fruit{ /*je cible le ul qui a pour class fruit différend avec espace je cible la class fruit qui se trouve dans ul*/
+	list-style: none;
+}
+ul.fruit li{
+	display: inline;
+	margin: 15px;
+}
+li .fa{
+	font-size: 80%;
+	color: TOMATO;
+}
+
+.imbriquee, .imbriquee ul{
+	padding-left: 15px;
+	margin: 5px;
+	cursor: pointer;
+}
+.asie, .eu{
+	margin-top: 20px;
+	list-style: none;
+	font-size: 20px;
+}
+.imbriquee li:not(.eu), .imbriquee li:not(.asie){
+	margin-left: 15px;
+}
+.asie ul li:hover {
+	color: tomato;
+	font-size: 30px;
+	transition: 2s;
+}
+.asie span:hover{
+	color: tomato;
+	font-size: 30px;
+	transition: 1s;
+}
+
+.eu ul li:hover{
+	color: tomato;
+	font-size: 30px;
+	transition: 1s;
+
+}
+.eu span:hover{
+	color: tomato;
+	font-size: 30px;
+	transition: 1s;
+}
+.asie span, .eu span{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+
+/*********************************  FIN PAGE LISTE  ***********************************/
+
+/*********************************  DEBUT PAGE LIEN / MENU  ***********************************/
+.ancre{
+	text-align: center;
+	margin: 15px;
+}
+.ancre a{
+	color: white;
+	background: tomato;
+	padding: 7px;
+	text-decoration: none;
+	border-radius: 7px;
+	margin: 5px;
+	box-shadow: 0px 1px 24px 0px rgba(46, 50, 50, 0.73);
+}
+.ancre a:hover{
+	font-size: 150%;
+	transition: 2s;
+}
+.contAncre{
+	border-top: 2px solid #2c3e50;
+	border-bottom: 2px solid #2c3e50;
+}
+#lien a{
+	text-decoration: none;
+	color: #2980b9;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 15px;
+	font-size: 120%;
+}
+#lien a:hover{
+	color: tomato;
+}
+/**** MENU ****/
+#menu nav{
+	background: transparent;
+	border: none;
+}
+#menu ul{
+	list-style: none;
+	text-align: center;
+}
+#menu ul li{
+	display: inline-block;
+}
+#menu nav a{
+	padding: 10px;
+	color: CRIMSON;
+	text-decoration: none;
+	background: white;
+}
+#menu nav a:hover{
+	background: khaki;
+	transition: 1s ease-in-out;
+}
+
+/*** MENU DEROULANT ***/
+#menuDeroulant{
+	height: 650px;
+}
+#menuDeroulant nav{
+	background: transparent;
+	border: none;
+	width: 90%;
+	margin: 0 auto;
+}
+#menuDeroulant nav ul li{
+	float: left;
+	list-style: none;
+	width: 20%;
+}
+#menuDeroulant ul ul{ /*Les listes qui sont dans les listes*/
+	display: none;
+}
+#menuDeroulant nav ul li ul li{
+	border-top: 1px solid pink;
+	width: 100%;
+}
+#menuDeroulant nav li{
+	background: GAINSBORO;
+}
+#menuDeroulant nav li a{
+	text-decoration: none;
+	color: #000;
+	padding: 4px 0 4px;
+	display: block; /*pour qu'il s'étende sur toute la laugeur de son conteneur*/
+	background: mistyrose;
+}
+#menuDeroulant nav ul.niveau1 li.sousMenu:hover ul.niveau2{
+	display: block;
+}
+/*********************************  FIN PAGE LIEN / MENU ***********************************/
+
+/*********************************  DEBUT PAGE FORMULAIRE ***********************************/
+form{
+	width: 60%;
+	background: lightcoral;
+	margin: 0 auto;
+	padding: 20px;
+	color: white;
+	border-radius: 15px;
+}
+label{
+	margin: 10px 0;
+	width: 50%;
+	display: inline-block;
+}
+textarea{
+	resize: none;
+}
+label[for="orange"], label[for="fraise"], label[for="mangue"]{
+	width: 10%;
+}
+/*********************************  FIN PAGE FORMULAIRE ***********************************/
+
+/*********************************  DEBUT PAGE MULTIMEDIA ***********************************/
+.videoFond{
+	padding-left: 0;
+	padding-right: 0;
+	}
+.videoFond video{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+}
+.videoTexte{
+	position: relative;
+	width: 100%;
+	height: 500px;
+}
+.videoFond p{
+	position: absolute;
+	z-index: 2;
+	width: 500px;
+	margin: auto;
+	background: rgba(255, 255, 255, 0.6);
+	left: 250px;
+	top: 100px;
+	padding: 20px;
+	font-size: 120%;
+	border-radius: 10px;
+}
+iframe[allowfullscreen]{ /*pour la vidéo et la map je l'ai appelé par un attribut*/
+	width: 100%;
+}
+.audio{
+	text-align: center;
+}
+
+/*********************************  FIN PAGE MULTIMEDIA ***********************************/
+
+/*********************************  FIN PAGE ANIMATION ***********************************/
+/*-------- Infobulle ----------*/
+.infoBulle{
+	height: 250px;
+	width: 500px;
+	margin: auto;
+	padding-top: 15px;
+	background: slategray;
+	box-shadow: 0 0 50px #222 inset /*effet à l'intérieur de l'élément*/
+}
+.infoBulle p{
+	text-align: center;
+	padding-top: 30px;
+}
+.infoBulle a{
+	color: white;
+	text-shadow: 0 -2px 0 black;
+	text-decoration: none;
+	border-radius: 3px;
+	padding:5px 15px;
+}
+.infoBulle a:hover{
+	text-shadow: 0 1px 2px black;
+	background: rgba(0,0,0,0.4);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.4);
+	color: white;
+}
+.infoBulle a span{
+	position: absolute;
+	padding: 15px;
+	margin-top: 23px;
+	margin-left: -35px;
+	background: rgba(0,0,0,0.9);
+	opacity: 0;
+	color: pink;
+	transform: scale(0) rotateZ(-12deg);
+	transition: .25s;
+	border-radius: 3px;
+	box-shadow: 0 0 2px rgba(0,0,0,.5);
+}
+.infoBulle a:hover span{
+	opacity: 1;
+	transform: scale(1) rotateZ(0);
+}
+.infoBulle a span:before{
+	content:'';
+	position: absolute;
+	top: -6px;
+	left: 10px;
+	border-bottom: 6px solid rgba(0,0,0,.9);
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+/*--------- Image grayscale & blur ----------*/
+
+.imgEffets{
+	width: 302px;
+	height: 320px;
+	margin: 70px auto;
+}
+.imgEffets li{
+	list-style: none;
+	float: left;
+	width: 141px;
+	height: 150px;
+	margin: 5px;
+}
+.imgEffets li:nth-child(3){
+	clear: both;
+}
+.imgEffets img{
+	position: absolute;
+	z-index: 1;
+	height: 150px;
+	box-shadow: 0 0 3px black;
+	transition: .5s cubic-bezier(0,3,.4,1);
+}
+.imgEffets li:hover img{
+	z-index: 2;
+	transform: scale(1.5);
+	box-shadow: 0 0 10px black;
+}
+.imgEffets:hover li:not(:hover) img{ /*je mets au survol de la classe imgEffets je met les images en gris en en flou sauf celle qui est en hoover*/
+	filter: grayscale(1) blur(8px);
+}
+
+/*------- Menu rotation ---------*/
+#menuRotate{
+	height: 360px;
+	width: 576px;
+	margin: 100px auto;
+	background: mistyrose;
+	position: relative; /*absolute en foncction du body sauf si son parent est en relative*/
+	overflow: hidden;
+	border: 2px solid pink;
+}
+#menuRotate .masque{
+	position: absolute;
+	z-index: 50;
+	width: 585px;
+	height: 135px;
+	top: 0;
+	left: 0;
+	background: linear-gradient(pink, mistyrose);
+}
+#menuRotate .ombre{
+	position: absolute;
+	z-index: 40;
+	width: 300px;
+	height: 6px;
+	box-shadow: 0px 100px 3px black;
+	border-radius: 75px / 3px; /*rayon horizontaux / rayon verticaux*/
+	top: 32px;
+	left: 142px;
+}
+#menuRotate dl{
+	position: relative;
+	top: 0;
+	left: 50%;
+	margin-left: -75px;
+	width: 150px;
+	height: 155px;
+	color: white;
+	text-align: center;
+	background: CRIMSON;
+	border-radius: 4px;
+	box-shadow: 0 0 6px rgba(0,0,0,0.7);
+	transform-origin: 50% 120px;
+	animation: bounceOut 0.7s ease-in-out;
+}
+#menuRotate dt{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	padding-top: 5px;
+}
+#menuRotate dd{
+	transform: rotate(180deg);
+}
+#menuRotate dd a{
+	display: block;
+	height: 24px;
+	padding: 3px 0;
+	color: white;
+	text-decoration: none;
+}
+#menuRotate dd a:hover{
+	background: rgba(255,255,255,0.1);
+}
+#menuRotate dl:hover{
+	transform: rotate(-180deg);
+	animation: bounceIn 0.7s ease-in-out;
+}
+@keyframes bounceIn{
+	from{transform: rotate(0deg);}
+	75%{transform: rotate(-200deg);}
+	90%{transform: rotate(-175deg);}
+	to{transform: rotate(-180deg);}
+}
+@keyframes bounceOut{
+	from{transform: rotate(0deg);}
+	0%{transform: rotate(-180deg);}
+	10%{transform: rotate(-165deg);}
+	to{transform: rotate(-360deg);}
+}
+
+/*********************************  FIN PAGE ANIMATION ***********************************/
+
+/********************************* DEBUT RESPONSIVE ****************************/
+@media screen and (max-width:580px){
+	main{
+		width: 98%;
+		margin: 0 auto;
+	}
+	h1{
+		font-size: 30px;
+		margin-top: 5px;
+	}
+	h2{
+		font-size: 30px;
+		padding: 1px 20px;
+	}
+	#logo{
+		width: 100%;
+	}
+	#logo img{
+		width: 90px;
+		height: 60px;
+	}
+	#slogan{
+		width: 100%;
+	}
+	#rs{
+		width: 100%;
+		text-align: center;
+	}
+	#rs a{
+		display: inline;
+		font-size: 20px;
+		padding: 5px;
+	}
+	button{
+		display: none;
+	}
+	nav a{
+		display: none;
+	}
+	.videoFond p{
+		position: static;
+		width: 100%;
+		font-size: 15px;
+		z-index: 0;
+	}
+	.videoFond{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.videoFond video{
+		z-index: 0;
+		position: static;
+	}
+	.videoTexte{
+		height: auto;
+	}
+	section{
+		margin-top: 5px;
+	}
+	.audio audio{
+		display: block;
+		width: 100%;
+	}
+<<<<<<< HEAD
+	.youtube{
+=======
+	iframe[src="https://www.youtube.com/embed/Y80juYcu3ZI?list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3"]{
+>>>>>>> master
+		height: 300px;
+	}
+}
