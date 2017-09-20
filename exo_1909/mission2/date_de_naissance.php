@@ -9,7 +9,8 @@ echo date('F', mktime(0, 0, 0, 1, 1, 2012)).'<br>';
     <select name="jour">
         <?php
         for ($i=1;$i<=31;$i++){
-            echo '<option value="' . $i . '">'.$i.'</option>';
+            $j = ($i<10)?'0'.$i:$i;
+            echo '<option value="' . $i . '">'.$j.'</option>';
         }
          ?>
     </select>
@@ -27,7 +28,7 @@ echo date('F', mktime(0, 0, 0, 1, 1, 2012)).'<br>';
     <label for="annee">Annee</label>
     <select name="annee">
         <?php
-        for ($i=1900;$i<=date('Y');$i++){
+        for ($i=date('Y');$i>=1900;$i--){
             echo '<option value="' . $i . '">'.$i.'</option>';
         }
          ?>

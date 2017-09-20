@@ -1,6 +1,6 @@
 <?php
-if (empty($_POST)){
-    extract ($_POST);
+extract ($_POST);
+if (is_numeric($champ1) && is_numeric($champ2)){
     switch ($operateur){
         case '+' :
             $resultat = $champ1 + $champ2;
@@ -14,6 +14,8 @@ if (empty($_POST)){
         case '/' :
             $resultat = $champ1 / $champ2;
             break;
+        default:
+            header("Location: calculatrice.php");
     }
     echo "Le résultat est : ".$resultat."<br><br>";
 }
