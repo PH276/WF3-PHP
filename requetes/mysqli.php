@@ -82,4 +82,3 @@ while ($lignes = $resultat->fetch_assoc()){
     echo '</tr>';
 }
 echo '</table>';
-include 't.php';
