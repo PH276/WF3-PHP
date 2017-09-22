@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=repertoire', 'root', '1111', array(
+$pdo = new PDO('mysql:host=localhost;dbname=repertoire', 'root', '', array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
 ) );
 

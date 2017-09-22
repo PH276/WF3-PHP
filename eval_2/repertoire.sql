@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Jeu 21 Septembre 2017 à 18:44
--- Version du serveur :  10.1.21-MariaDB
--- Version de PHP :  5.6.30
+-- Hôte : 127.0.0.1
+-- Généré le :  ven. 22 sep. 2017 à 09:23
+-- Version du serveur :  10.1.22-MariaDB
+-- Version de PHP :  7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -41,7 +43,15 @@ CREATE TABLE `annuaire` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables exportées
+-- Déchargement des données de la table `annuaire`
+--
+
+INSERT INTO `annuaire` (`id_annuaire`, `nom`, `prenom`, `telephone`, `profession`, `ville`, `codepostal`, `adresse`, `date_de_naissance`, `sexe`, `description`) VALUES
+(1, 'HUITOREL', 'Pascal', 0174546406, 'INFO', 'VLG', 92390, '10 rue Henri Barbusse', '1966-07-22', 'm', 'Pass'),
+(2, 'HUITOREL', 'Pascal', 0174546406, '', 'VLG', 92390, '10 rue Henri Barbusse', '0000-00-00', 'f', '');
+
+--
+-- Index pour les tables déchargées
 --
 
 --
@@ -49,6 +59,16 @@ CREATE TABLE `annuaire` (
 --
 ALTER TABLE `annuaire`
   ADD PRIMARY KEY (`id_annuaire`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `annuaire`
+--
+ALTER TABLE `annuaire`
+  MODIFY `id_annuaire` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

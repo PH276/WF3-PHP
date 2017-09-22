@@ -10,7 +10,7 @@
         && strlen($telephone)<=10
         && is_numeric($codepostal)) {
             print_r($_POST);
-            $pdo = new PDO("mysql:host=localhost;dbname=repertoire", 'root', '1111', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $pdo = new PDO("mysql:host=localhost;dbname=repertoire", 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             try {
                 $resultat = $pdo->exec("INSERT INTO annuaire(nom, prenom, telephone, profession, ville, codepostal, adresse, date_de_naissance, sexe, description) VALUES ('$nom', '$prenom', '$telephone', '$profession', '$ville', '$codepostal', '$adresse', '$date_de_naissance', '$sexe', '$description')");
 
