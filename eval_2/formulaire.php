@@ -14,7 +14,6 @@
             try {
                 $resultat = $pdo->exec("INSERT INTO annuaire(nom, prenom, telephone, profession, ville, codepostal, adresse, date_de_naissance, sexe, description) VALUES ('$nom', '$prenom', '$telephone', '$profession', '$ville', '$codepostal', '$adresse', '$date_de_naissance', '$sexe', '$description')");
 
-
             } catch (PDOException $e) {
                 ?>
                 <div style="background:red;font-weight:bold;color:white;padding:10px">
@@ -31,8 +30,6 @@
                 fwrite($f, date('d/m/Y H:i:s').' - '.$erreur[0]['file'].' - '.$erreur[0]['args'][0]."\r\n");
                 exit();
             }
-
-
         }
     }
     ?>
