@@ -1,18 +1,30 @@
-
 <pre>
     <?php
+    $pdo = new PDO("mysql:host=localhost;dbname=repertoire", 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
     if (!empty($_POST)){
 
         extract($_POST);
         if(strlen($nom)>=3
         && strlen($prenom)>=3
         && is_numeric($telephone)
-        && strlen($telephone)<=10
+        && strlen($telephone)>0 && strlen($telephone)<=10
         && is_numeric($codepostal)) {
             print_r($_POST);
-            $pdo = new PDO("mysql:host=localhost;dbname=repertoire", 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             try {
-                $resultat = $pdo->exec("INSERT INTO annuaire(nom, prenom, telephone, profession, ville, codepostal, adresse, date_de_naissance, sexe, description) VALUES ('$nom', '$prenom', '$telephone', '$profession', '$ville', '$codepostal', '$adresse', '$date_de_naissance', '$sexe', '$description')");
+                $req = $pdo->prepare("INSERT INTO annuaire(nom, prenom, telephone, profession, ville, codepostal, adresse, date_de_naissance, sexe, description) VALUES (:nom, :prenom, :telephone, :profession, :ville, :codepostal, :adresse, :date_de_naissance, :sexe, :description)");
+
+                $resultat->bindParam(':nom', $nom, PDO::PARAM_STR);
+                $resultat->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+                $resultat->bindParam(':telephone', $telephone, PDO::PARAM_INT);
+                $resultat->bindParam(':profession', $profession, PDO::PARAM_STR);
+                $resultat->bindParam(':ville', $ville, PDO::PARAM_STR);
+                $resultat->bindParam(':codepostal', $codepostal, PDO::PARAM_INT);
+                $resultat->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+                $resultat->bindParam(':date_de_naissance', $date_de_naissance, PDO::PARAM_STR);
+                $resultat->bindParam(':sexe', $sexe, PDO::PARAM_STR);
+                $resultat->bindParam(':description', $description, PDO::PARAM_STR);
+
+                $resultat->execute();
 
             } catch (PDOException $e) {
                 ?>

@@ -34,33 +34,27 @@ echo '</table>';
 
 $resultat = $pdo->query('SELECT sexe, count(*) AS nb_sexe FROM annuaire GROUP BY sexe');
 $res=$resultat->fetchAll();
+$m = 0;
+$f = 0;
 
 
-switch ($resultat->rowCount()){
-    case 0 :
-        $m = 0;
-        $f = 0;
-        break;
-    case 1 :
-        if ($res[0]['sexe']=='m'){
-            $f = 0;
-            $m = $res[0]['nb_sexe'];
-        }
-        else{
-            $m = 0;
-            $f = $res[0]['nb_sexe'];
-        }
-        break;
-    case 2 :
-        if ($res[0]['sexe']=='m'){
-            $m = $res[0]['nb_sexe'];
-            $f = $res[1]['nb_sexe'];
-        }
-        else{
-            $f = $res[0]['nb_sexe'];
-            $m = $res[1]['nb_sexe'];
-        }
-        break;
+if ($resultat->rowCount()==1){
+    if ($res[0]['sexe']=='m'){
+        $m = $res[0]['nb_sexe'];
+    }
+    else{
+        $f = $res[0]['nb_sexe'];
+    }
+}
+if ($resultat->rowCount()==2){
+    if ($res[0]['sexe']=='m'){
+        $m = $res[0]['nb_sexe'];
+        $f = $res[1]['nb_sexe'];
+    }
+    else{
+        $f = $res[0]['nb_sexe'];
+        $m = $res[1]['nb_sexe'];
+    }
 }
 echo '<br>il y a '.$m.' homme(s) et '.$f.' femmes(s)';
 
