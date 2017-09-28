@@ -1,5 +1,6 @@
 <?php
 require_once ('inc/init.inc.php');
+$page = 'profil';
 if (!userConnecte()){
     header('location:connexion.php');
 }
@@ -13,7 +14,10 @@ require_once ('inc/header.inc.php');
 <!--  contenu HTML  -->
 <h1>Profil de <?= $pseudo ?></h1>
 <div class="profil">
-    <p></p>
+    <div class="">
+        <p>Bonjour <?= $pseudo ?> !!</p>
+    </div>
+
     <div class="profil_img">
         <img src="img/default.jpg" alt="">
     </div>

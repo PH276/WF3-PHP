@@ -9,9 +9,11 @@ $pdo = new PDO("mysql:host=localhost;dbname=site", 'root', '', array(
 ));
 
 //var
-$msg = '';
-
+$msg = ''; // message pour l'utilisateur
+$page = ''; // page en cours
+$contenu = '';
 // chemins
+define('RACINE_SITE', '/PHP/site/');
 
 // autres inclusions
 require('fonctions.inc.php');

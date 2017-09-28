@@ -1,6 +1,8 @@
 <?php
 require_once ('inc/init.inc.php');
 
+$page='inscription';
+
 if (userConnecte()){
     header('location:profil.php');
 }
@@ -142,7 +144,7 @@ if (!empty($_POST)){
 
             if ($resultat->rowCount() > 0){
                 // nous aurions pu proposer 2 à 3 variantes de  son pseudo, en ayant vérifié qu'ils sont dispo
-                $msg .= '<div class="erreur">L\'email' '.$_POST['email'].' n\'est pas disponible, Veuillez en choisir un autre.</div>';
+                $msg .= '<div class="erreur">L\'email '.$_POST['email'].' n\'est pas disponible, Veuillez en choisir un autre.</div>';
             }
             else{
 

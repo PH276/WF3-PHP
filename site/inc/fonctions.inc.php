@@ -22,3 +22,14 @@ function userConnecte(){
         return false;
     }
 }
+
+
+// fonction pour voir si l'utilisateur est admin
+function userAdmin(){
+    if (userConnecte() && $_SESSION['membre']['statut']==1){
+        return true;
+    }
+    else {
+        return false;
+    }
+}

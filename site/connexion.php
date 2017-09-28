@@ -1,7 +1,8 @@
 <?php
 require_once ('inc/init.inc.php');
+$page = 'connexion';
 
-if (isset($_GET['action'] && $_GET['action']=='deconnexion')){
+if (isset($_GET['action']) && $_GET['action']=='deconnexion'){
     unset($_SESSION['membre']);
     header('location:connexion.php');
 }
@@ -65,7 +66,7 @@ require_once ('inc/header.inc.php');
     <?= $msg; ?>
 
     <label for="pseudo">Pseudo :</label>
-    <input type="text" id="pseudo" name="pseudo" value="<?= (isset($_POST['pseudo']))?$_POST['pseudo']:'' ?>">
+    <input type="text" id="pseudo" name="pseudo" value="<?= (isset($_POST['pseudo']))?$_POST['pseudo']:'' ?>" >
 
     <label for="mdp">Mot de passe :</label>
     <input type="password" id="mdp" name="mdp"  value="<?= (isset($mdp))?$mdp:'' ?>">
