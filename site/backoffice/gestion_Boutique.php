@@ -1,6 +1,14 @@
 <?php
 require_once ('../inc/init.inc.php');
 
+if (isset($_GET) && $_GET['msg'] == 'validation' && isset($_GET['id'])){
+    $msg .= '<div class="validation">Le produit n° '.$_GET['id'].' a été correctement enregistré !</div>';
+}
+
+if (isset($_GET) && $_GET['msg'] == 'suppr' && isset($_GET['id'])){
+    $msg .= '<div class="validation">Le produit n° '.$_GET['id'].' a été correctement supprimé !</div>';
+}
+
 $resultat = $pdo->query('SELECT * FROM produit');
 $produits = $resultat -> fetchAll(PDO::FETCH_ASSOC);
 $contenu .=  '<br>Nombre de produits : '.$resultat->rowCount().'<br><hr>';
@@ -26,7 +34,7 @@ foreach ($produits as $val){
 
         $contenu .= '<td>';
         if ($key == 'photo') {
-            $contenu .= '<img src="'.RACINE_SITE.'photo/'.$val2.'" height="90" alt="">';
+            $contenu .= '<img src="' . RACINE_SITE . 'photo/' .$val2 .'" height="90" alt="" />';
         }
         elseif ($key == 'prix') {
             $contenu .=  $val2.$euro;
@@ -41,7 +49,7 @@ foreach ($produits as $val){
     $contenu .= '<a href="#"><img src="'.RACINE_SITE.'img/edit.png"  alt=""></a>';
     $contenu .= '</td>';
     $contenu .= '<td>';
-    $contenu .= '<a href="#"><img src="'.RACINE_SITE.'img/delete.png"  alt=""></a>';
+    $contenu .= '<a href="supprimer_produit.php?id='.$val['id_produit'].'"><img src="'.RACINE_SITE.'img/delete.png" alt="" /></a>';
     $contenu .= '</td>';
     $contenu .= '</tr>';
 }
