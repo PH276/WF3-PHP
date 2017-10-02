@@ -1,0 +1,20 @@
+
+CREATE TABLE `adherent` (
+
+
+
+
+
+« livre » avec les champs suivant :
+- id_abonne (PK – AI – INT(3))
+- prenom (VARCHAR(25))
+abonne
+- id_livre(PK – AI – INT(3))
+- auteur (VARCHAR(25))
+- titre (VARCHAR(50))
+livre
+- id_emprunt (PK – AI – INT(3))
+- id_livre (FK - INT(3))
+- id_abonne (FK - INT(3))
+- date_sortie (DATE)
+- date_rendu (DATE – DEFAULT NULL)
