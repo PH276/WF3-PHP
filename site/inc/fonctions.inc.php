@@ -33,3 +33,35 @@ function userAdmin(){
         return false;
     }
 }
+
+
+// creation du panier
+function creationPanier(){
+    if (!isset($_SESSION['panier'])){
+        $_SESSION['panier'] = array();
+        $_SESSION['panier']['id_produit'] = array();
+        $_SESSION['panier']['quantite'] = array();
+        $_SESSION['panier']['prix'] = array();
+        $_SESSION['panier']['titre'] = array();
+        $_SESSION['panier']['photop'] = array();
+    }
+}
+
+// ajouter un produit au panier
+ajouterProduit($id_produit, $quantite, $photo, $titre, $prix){
+    creationPanier();
+
+    $position_pdt = array_search($id_produit, $_SESSION['panier']['id_produit'])
+    if ($position_pdt!==false){
+        $_SESSION['panier']['quantite'][$position_pdt] += $quantite;
+    }
+    else{
+        $_SESSION['panier']['id_produit'][] = $id_produit;
+        $_SESSION['panier']['quantite'] = $quantite;
+        $_SESSION['panier']['prix'] = $photo;
+        $_SESSION['panier']['titre'] = $titre;
+        $_SESSION['panier']['photop'] = $prix;
+        // crochets vide permet d'ajouter un elt au tableau
+
+    }
+}

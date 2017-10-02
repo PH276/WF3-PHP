@@ -23,8 +23,8 @@
 
                 <?php if (userAdmin()) : ?>
                     <a class="<?= ($page=='gboutique')?'active':'' ?>" href="<?= RACINE_SITE ?>backoffice/gestion_Boutique.php">Gestion Boutique</a>
-                    <a class="<?= ($page=='gmembres')?'active':'' ?>" href="<?= RACINE_SITE ?>backoffice/gestion_Membres.php">Gestion Membres</a>
-                    <a class="<?= ($page=='gcommandes')?'active':'' ?>" href="<?= RACINE_SITE ?>backoffice/gestion_Commandes.php">Gestion Commandes</a>
+                    <a class="<?= ($page=='gmembres')?'active':'' ?>" href="<?= RACINE_SITE ?>backoffice/gestion_membres.php">Gestion Membres</a>
+                    <a class="<?= ($page=='gcommandes')?'active':'' ?>" href="<?= RACINE_SITE ?>backoffice/gestion_commandes.php">Gestion Commandes</a>
 
                 <?php endif; ?>
 

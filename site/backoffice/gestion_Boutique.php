@@ -1,11 +1,11 @@
 <?php
 require_once ('../inc/init.inc.php');
 
-if (isset($_GET) && $_GET['msg'] == 'validation' && isset($_GET['id'])){
+if (isset($_GET['msg']) && $_GET['msg'] == 'validation' && isset($_GET['id'])){
     $msg .= '<div class="validation">Le produit n° '.$_GET['id'].' a été correctement enregistré !</div>';
 }
 
-if (isset($_GET) && $_GET['msg'] == 'suppr' && isset($_GET['id'])){
+if (isset($_GET['msg']) && $_GET['msg'] == 'suppr' && isset($_GET['id'])){
     $msg .= '<div class="validation">Le produit n° '.$_GET['id'].' a été correctement supprimé !</div>';
 }
 
@@ -46,7 +46,7 @@ foreach ($produits as $val){
         $contenu .= '</td>';
     }
     $contenu .= '<td>';
-    $contenu .= '<a href="#"><img src="'.RACINE_SITE.'img/edit.png"  alt=""></a>';
+    $contenu .= '<a href="formulaire_produit.php?id='.$val['id_produit'].'"><img src="'.RACINE_SITE.'img/edit.png"  alt=""></a>';
     $contenu .= '</td>';
     $contenu .= '<td>';
     $contenu .= '<a href="supprimer_produit.php?id='.$val['id_produit'].'"><img src="'.RACINE_SITE.'img/delete.png" alt="" /></a>';
