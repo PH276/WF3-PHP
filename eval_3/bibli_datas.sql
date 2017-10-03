@@ -1,10 +1,10 @@
-INSERT INTO `abonne`(`id_abonne`, `prenom`) VALUES 
+INSERT INTO `abonne`(`id_abonne`, `prenom`) VALUES
 (1, 'Guillaume'),
 (2, 'Benoit'),
 (3, 'Chloe'),
 (4, 'Laura');
 
-INSERT INTO `livre`(`id_livre`, `auteur`, `titre`) VALUES 
+INSERT INTO `livre`(`id_livre`, `auteur`, `titre`) VALUES
 (100, 'GUY DE MAUPASSANT', 'Une vie'),
 (101, 'GUY DE MAUPASSANT', 'Bel-Ami'),
 (102, 'HONORE DE BALZAC', 'Le pere Goriot'),
