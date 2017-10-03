@@ -27,7 +27,8 @@ else{
 }
 
 if (!empty($_POST)){
-	ajouterProduit($id_produit, $_POST['qte'], $photo, $titre, $prix);
+	ajouterProduit($id_produit, $_POST['quantite'], $photo, $titre, $prix);
+	debug($_SESSION);
 }
 
 
@@ -54,7 +55,7 @@ require_once('inc/header.inc.php');
 		<legend>Acheter ce produit :</legend>
 
 		<?php if ($stock > 0) : ?>
-		<form method="post" action="?produit=<?= $produit ?>">
+		<form method="post" action="">
 			<label>Quantité :</label>
 			<?php $nb_max_panier = (($stock<5)?$stock:5); ?>
 			<select name="quantite">

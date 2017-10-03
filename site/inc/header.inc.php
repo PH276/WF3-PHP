@@ -19,7 +19,12 @@
                     <a class="<?= ($page=='connexion')?'active':'' ?>" href="<?= RACINE_SITE ?>connexion.php">Connexion</a>
                 <?php endif; ?>
                 <a class="<?= ($page=='boutique')?'active':'' ?>" href="<?= RACINE_SITE ?>boutique.php">Boutique</a>
-                <a class="<?= ($page=='panier')?'active':'' ?>" href="<?= RACINE_SITE ?>panier.php">Panier</a>
+                <a class="<?= ($page=='panier')?'active':'' ?>" href="<?= RACINE_SITE ?>panier.php">Panier
+                    <?php if (quantitePanier()) : ?>
+                        <span class="bulle"><?= quantitePanier() ?></span>
+                    <?php endif; ?>
+
+                </a>
 
                 <?php if (userAdmin()) : ?>
                     <a class="<?= ($page=='gboutique')?'active':'' ?>" href="<?= RACINE_SITE ?>backoffice/gestion_Boutique.php">Gestion Boutique</a>

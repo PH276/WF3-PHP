@@ -37,31 +37,76 @@ function userAdmin(){
 
 // creation du panier
 function creationPanier(){
-    if (!isset($_SESSION['panier'])){
+    if (!isset($_SESSION['panier'])) {
         $_SESSION['panier'] = array();
         $_SESSION['panier']['id_produit'] = array();
         $_SESSION['panier']['quantite'] = array();
         $_SESSION['panier']['prix'] = array();
         $_SESSION['panier']['titre'] = array();
-        $_SESSION['panier']['photop'] = array();
+        $_SESSION['panier']['photo'] = array();
     }
 }
 
 // ajouter un produit au panier
-ajouterProduit($id_produit, $quantite, $photo, $titre, $prix){
+function ajouterProduit ($id_produit, $quantite, $photo, $titre, $prix){
     creationPanier();
 
-    $position_pdt = array_search($id_produit, $_SESSION['panier']['id_produit'])
-    if ($position_pdt!==false){
+    $position_pdt = array_search($id_produit, $_SESSION['panier']['id_produit']);
+    if ($position_pdt !== false){
         $_SESSION['panier']['quantite'][$position_pdt] += $quantite;
     }
     else{
         $_SESSION['panier']['id_produit'][] = $id_produit;
-        $_SESSION['panier']['quantite'] = $quantite;
-        $_SESSION['panier']['prix'] = $photo;
-        $_SESSION['panier']['titre'] = $titre;
-        $_SESSION['panier']['photop'] = $prix;
+        $_SESSION['panier']['quantite'][] = $quantite;
+        $_SESSION['panier']['photo'][] = $photo;
+        $_SESSION['panier']['titre'][] = $titre;
+        $_SESSION['panier']['prix'][] = $prix;
         // crochets vide permet d'ajouter un elt au tableau
 
+    }
+}
+
+// function pour calculer le nb de produit ds le panier
+function quantitePanier(){
+
+    $nbreProduit = 0;
+    if (isset($_SESSION['panier'])){
+        foreach($_SESSION['panier']['quantite'] as $quantite){
+            $nbreProduit += $quantite;
+        }
+    }
+
+    if ($nbreProduit != 0) {
+        return $nbreProduit;
+    }
+    else{
+        return false;
+    }
+
+}
+// fonction montant total du panier
+function montantTotal(){
+    $total = 0;
+    if (isset($_SESSION['panier']['id_produit'])){
+        for ($i=0; $i < count($_SESSION['panier']['id_produit']); $i++) {
+            $total += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i];
+        }
+    }
+
+    return $total;
+
+}
+
+// supprimer un article du panier
+function retirerProduit($id_produit){
+    $position_pdt_a_supprimer = array_search($id_produit, $_SESSION['panier']['id_produit']);
+
+    if ($position_pdt_a_supprimer !== false){
+        // array_splice() supprime un elt d'un tableau en réindexant le tableau
+        array_splice($_SESSION['panier']['id_produit'], $position_pdt_a_supprimer, 1);
+        array_splice($_SESSION['panier']['quantite'], $position_pdt_a_supprimer, 1);
+        array_splice($_SESSION['panier']['prix'], $position_pdt_a_supprimer, 1);
+        array_splice($_SESSION['panier']['photo'], $position_pdt_a_supprimer, 1);
+        array_splice($_SESSION['panier']['titre'], $position_pdt_a_supprimer, 1);
     }
 }
