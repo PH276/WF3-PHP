@@ -3,7 +3,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=repertoire', 'root', '', array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
 ) );
 
-
 $resultat = $pdo->query('SELECT * FROM annuaire');
 echo "<h1>Liste des entrées dans l'annuaire</h1>";
 
@@ -36,7 +35,6 @@ $resultat = $pdo->query('SELECT sexe, count(*) AS nb_sexe FROM annuaire GROUP BY
 $res=$resultat->fetchAll();
 $m = 0;
 $f = 0;
-
 
 if ($resultat->rowCount()==1){
     if ($res[0]['sexe']=='m'){

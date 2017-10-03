@@ -1,7 +1,15 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=bibliotheque", 'root', '1111', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+$pdo = new PDO("mysql:host=localhost;dbname=bibliotheque", 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
 $msg = '';
+
+if (isset($_GET['id'])){
+    $resultat = $pdo->prepare("SELECT * FROM abonne WHERE id_abonne=".$_GET['id']);
+    $resultat->bindParam(':id_abonne', $_POST['id_abonne'], PDO::PARAM_INT);
+    $resultat->execute();
+    $abonne = $resultat->fetch(PDO::FETCH_ASSOC);
+
+}
 
 if (!empty($_POST)){
     echo '<pre>';
@@ -30,7 +38,7 @@ if (!empty($_POST)){
         <legend>Ajout d'un abonné</legend>
 
         <label for="prenom">Prénom :</label><br>
-        <input type="text" id="prenom" name="prenom"><br><br>
+        <input type="text" id="prenom" name="prenom" value="<?= (isset($_GET['id']))?$abonne['prenom']:'' ?>"><br><br>
 
         <input type="submit" value="Enregistrement">
     </fieldset>

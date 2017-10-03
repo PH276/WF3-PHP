@@ -1,5 +1,34 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=bibliotheque", 'root', '1111', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+$pdo = new PDO("mysql:host=localhost;dbname=bibliotheque", 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+
+// nb_abonnes
+$resultat = $pdo->query("SELECT count(*) FROM abonne");
+$abonnes = $resultat->fetch();
+$nb_abonne = $abonnes[0];
+
+// nb_livres
+$resultat = $pdo->query("SELECT count(*) FROM livre");
+$livres = $resultat->fetch();
+$nb_livre = $livres[0];
+
+// nb_emprunt
+$resultat = $pdo->query("SELECT count(*) FROM emprunt");
+$emprunts = $resultat->fetch();
+$nb_emprunt = $emprunts[0];
+
+// id et titre des livres non rendus
+$resultat = $pdo->query("SELECT e.id_livre, titre FROM emprunt e LEFT JOIN livre l ON l.id_livre=e.id_livre WHERE date_rendu IS NULL");
+$livre_non_rendu = $requete->fetchAll(FETCH_ASSOC);
+// foreach
+
+
+
+
+
+
+
+
+
 
 // suppression d'un abonné
 if (isset($_GET['supp_abonne'])) : ?>
@@ -66,7 +95,7 @@ foreach ($abonnes as $val){
     }
 
     $contenu .= '<td>';
-    $contenu .= '<a href="#"><img src="img/edit.png"  alt=""></a>';
+    $contenu .= '<a href="ajout_abonne.php?id='.$val['id_abonne'].'"><img src="img/edit.png"  alt=""></a>';
     $contenu .= '</td>';
     $contenu .= '<td>';
     $contenu .= '<a href="?supp_abonne='.$val['id_abonne'].'"><img src="img/delete.png" alt="" /></a>';
@@ -107,7 +136,7 @@ foreach ($livres as $val){
     }
 
     $contenu .= '<td>';
-    $contenu .= '<a href="#"><img src="img/edit.png"  alt=""></a>';
+    $contenu .= '<a href="ajout_livre.php?id='.$val['id_livre'].'"><img src="img/edit.png"  alt=""></a>';
     $contenu .= '</td>';
     $contenu .= '<td>';
     $contenu .= '<a href="?supp_livre='.$val['id_livre'].'"><img src="img/delete.png" alt="" /></a>';

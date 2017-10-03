@@ -1,7 +1,21 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=bibliotheque", 'root', '1111', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+$pdo = new PDO("mysql:host=localhost;dbname=bibliotheque", 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
 $msg = '';
+
+if (isset($_GET['id'])){
+    $resultat = $pdo->prepare("SELECT * FROM livre WHERE id_livre=".$_GET['id']);
+    $resultat->bindParam(':id_livre', $_POST['id_livre'], PDO::PARAM_INT);
+    $resultat->execute();
+    $livre = $resultat->fetch(PDO::FETCH_ASSOC);
+
+}
+
+
+
+
+
+
 
 if (!empty($_POST)){
     echo '<pre>';
@@ -35,10 +49,10 @@ if (!empty($_POST)){
         <legend>Ajout d'un livre</legend>
 
         <label for="titre">Titre :</label><br>
-        <input type="text" id="titre" name="titre"><br><br>
+        <input type="text" id="titre" name="titre" value="<?= (isset($_GET['id']))?$livre['titre']:'' ?>"><br><br>
 
         <label for="auteur">Auteur :</label><br>
-        <input type="text" id="auteur" name="auteur"><br><br>
+        <input type="text" id="auteur" name="auteur" value="<?= (isset($_GET['id']))?$livre['auteur']:'' ?>"><br><br>
 
         <input type="submit" value="Enregistrement">
     </fieldset>
